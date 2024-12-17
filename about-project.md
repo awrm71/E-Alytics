@@ -48,7 +48,7 @@ This feature helps users identify patterns, strategies, and gameplay trends effi
 - **Uploading Files**: After downloading `.dem` files, move them into the `cache` folder located in the project repository.  
 - **Handling `.rar` Files**: If files are downloaded in `.rar` format, use [7-Zip](https://www.7-zip.org/) to unzip them. Simply install 7-Zip, right-click the file, and select "Extract Here."  
 
-Additionally, sample `.dem` files for experimentation are provided in this **[OneDrive Folder](https://sumailsyr-my.sharepoint.com/:f:/g/personal/admurphy_syr_edu/ErvldEJSsLBPm0fsc1jqZEIBecmIzzhrxBfB2IVge5V4FA?e=5fNE7n)** so users can test the dashboard without needing to obtain their own files or unpackaging the `.rar` files themselves.  
+Additionally, sample `.dem` files for experimentation are provided in this **[Google Drive Folder](https://drive.google.com/drive/folders/1X8OYkH8YUKpLdyED9k47Dp0YBHXQg_ne?usp=sharing)** so users can test the dashboard without needing to obtain their own files or unpackaging the `.rar` files themselves.  
 
 ### How You Run My Project  
 
@@ -100,7 +100,7 @@ This will start the Streamlit application in your default browser.
 
 - **Uploading Files**: Move downloaded `.dem` files into the `cache` folder before uploading them in the app.
 - **Handling `.rar` Files**: Use [7-Zip](https://www.7-zip.org/) to extract compressed `.rar` files if necessary.
-- **Sample Files**: Sample `.dem` files are available in this **[OneDrive Folder](PLACEHOLDER_LINK)** for testing purposes.
+- **Sample Files**: Sample `.dem` files are available in this **[Google Drive Folder](https://drive.google.com/drive/folders/1X8OYkH8YUKpLdyED9k47Dp0YBHXQg_ne?usp=sharing)** for testing purposes.
 
 By following these steps, users can seamlessly analyze CS2 match data, explore team strategies through visuals, and extract meaningful insights using this interactive dashboard.
 
