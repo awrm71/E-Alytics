@@ -1,0 +1,9 @@
+demoparser2
+streamlit
+matplotlib
+numpy
+pandas
+seaborn
+awpy2
+plotly
+playwright
