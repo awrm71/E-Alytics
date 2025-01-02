@@ -78,7 +78,7 @@ This will start the Streamlit application in your default browser.
    └── about-project.md
    └── reflection.md
    └── requirements.txt
-    ```
+   ```
 ## Interact with the Application
 
 #### Tournament and Match Selection
