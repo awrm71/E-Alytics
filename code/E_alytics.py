@@ -105,18 +105,6 @@ def main():
             st.session_state["parsed_matches"] = {}
 
         # Process each uploaded file and store it in session state
-        # for uploaded_file in uploaded_files:
-        #     if uploaded_file.name not in st.session_state["parsed_matches"]:
-        #         # Check if the file already exists in the cache folder
-        #         cache_path = os.path.join("cache", uploaded_file.name)
-        #         if os.path.exists(cache_path):
-        #             temp_path = cache_path  # Use the existing file
-        #         else:
-        #             # Create a temporary file if it doesn't already exist in the cache folder
-        #             temp_path = f"temp_{uploaded_file.name}"
-        #             with open(temp_path, "wb") as f:
-        #                 f.write(uploaded_file.read())
-
         for uploaded_file in uploaded_files:
             if uploaded_file.name not in st.session_state["parsed_matches"]:
                 # Assume files are in a subfolder within cache (e.g., 'cache/parsing_files')
