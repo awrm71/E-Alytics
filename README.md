@@ -1,8 +1,5 @@
 # E-Alytics: CS2 Demos Analysis  
 
-Student Name:  Adam Murphy
-Student Email:  admurphy@syr.edu 
-
 ### What it Does  
 
 The **E-Alytics: CS2 Demos Analysis** is a comprehensive and interactive dashboard for analyzing **CS2 match and tournament data**. It combines pre-scraped tournament data with user-uploaded `.dem` files, which are parsed using [awpy](https://github.com/pnxenopoulos/awpy) and [demoparser2](https://github.com/akiver/demoparser2), to provide detailed statistics, game events, and visualizations. This tool simplifies the analysis of competitive CS2 matches for esports enthusiasts, players, and analysts.
@@ -78,7 +75,7 @@ This will start the Streamlit application in your default browser.
    └── about-project.md
    └── reflection.md
    └── requirements.txt
-    ```
+   ```
 ## Interact with the Application
 
 #### Tournament and Match Selection
