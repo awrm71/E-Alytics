@@ -113,5 +113,4 @@ By following these steps, users can seamlessly analyze CS2 match data, explore t
   2. `map_viz.py`
   3. `stats_viz.py`
 - **Experimental Files**: Files such as `E-test.py` and `parser.ipynb` are for experimentation and data manipulation testing. They are not required for running the application but can be explored for additional insights.
-- **Temp files**: For some reason when parsing these files in Streamlit, duplicate .dem files will appear in the project folder with `temp_` at the start. I didn't have time to fix these issues once i realized they were happening so if this occurs just delete them as it wont hurt this application or the original files.
 - **Testing**: When testing, make sure you have at least 1 `.dem` file in the `cache` folder before testing any files. 

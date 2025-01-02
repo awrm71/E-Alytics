@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 from Stats import parse_demo_file, parse_game_events
 from stat_viz import combine_heatmaps, create_heatmap_visuals
 from map_viz import (
@@ -104,11 +105,33 @@ def main():
             st.session_state["parsed_matches"] = {}
 
         # Process each uploaded file and store it in session state
+        # for uploaded_file in uploaded_files:
+        #     if uploaded_file.name not in st.session_state["parsed_matches"]:
+        #         # Check if the file already exists in the cache folder
+        #         cache_path = os.path.join("cache", uploaded_file.name)
+        #         if os.path.exists(cache_path):
+        #             temp_path = cache_path  # Use the existing file
+        #         else:
+        #             # Create a temporary file if it doesn't already exist in the cache folder
+        #             temp_path = f"temp_{uploaded_file.name}"
+        #             with open(temp_path, "wb") as f:
+        #                 f.write(uploaded_file.read())
+
         for uploaded_file in uploaded_files:
             if uploaded_file.name not in st.session_state["parsed_matches"]:
-                temp_path = f"temp_{uploaded_file.name}"
-                with open(temp_path, "wb") as f:
-                    f.write(uploaded_file.read())
+                # Assume files are in a subfolder within cache (e.g., 'cache/parsing_files')
+                cache_subfolder = os.path.join("cache", "parsing_files")
+                file_path = os.path.join(cache_subfolder, uploaded_file.name)
+
+                if os.path.exists(file_path):
+                    # Use the existing file in the subfolder directly
+                    st.session_state["parsed_matches"][uploaded_file.name] = parse_demo_file(file_path)
+                    st.session_state["parsed_matches"][uploaded_file.name]["game_events"] = parse_game_events(file_path)
+                else:
+                    # If the file is not found in the cache folder, log an error
+                    st.error(f"File {uploaded_file.name} not found in {cache_subfolder}. Please ensure the file exists.")
+
+
 
                 @st.cache_data(show_spinner=False)
                 def process_demo_file_with_events(demo_path, file_name):
@@ -119,7 +142,8 @@ def main():
 
                 try:
                     # Parse the file and store results
-                    parsed_data = process_demo_file_with_events(temp_path, uploaded_file.name)
+                    parsed_data = process_demo_file_with_events(file_path, uploaded_file.name)
+
                     st.session_state["parsed_matches"][uploaded_file.name] = parsed_data
                 except Exception as e:
                     st.error(f"Error processing file {uploaded_file.name}: {e}")
